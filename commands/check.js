@@ -15,6 +15,18 @@ const check = {
         } catch (err) {
             console.log(err);
         }
+    },
+
+    async coinUpdate(cmd) {
+        try {
+            const keyManager = new KeyManager();
+            const cryptoAPI = new CryptoAPI(keyManager.getKey());
+            const priceUpdateData = await cryptoAPI.getCoinUpdate(cmd.coin, cmd.currency);
+            console.log(priceUpdateData);
+        } catch (err) {
+            console.log(err);
+
+        }
     }
 }
 

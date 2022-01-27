@@ -8,6 +8,13 @@ program
     .option('--currency <currency>', "change the default currency", 'USD')
     .action((cmd) => check.price(cmd));
 
+program
+    .command('coin-update')
+    .description('Check the coin performance in detail')
+    .option('--coin <coin>', 'The cryptocurrency to check the price of', 'BTC')
+    .option('--currency <currency>', "change the default currency", 'USD')
+    .action((cmd) => check.coinUpdate(cmd))
+
 
 
 
